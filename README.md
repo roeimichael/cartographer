@@ -38,10 +38,6 @@ The plugin walks you through scope → clarifying questions → segment confirma
 - **Refactor backlog** ranked P0–P3
 - **Fix application** (opt-in, behind a gate) — branch isolation, surgical edits, test runner
 
-## See it in action
-
-[`examples/stocksCorrelation/FINAL_REPORT.md`](examples/stocksCorrelation/FINAL_REPORT.md) — real output from a 134-file Python + React quant-trading project. 8 P0/P1 findings, cross-cutting patterns, refactor backlog, Phase 7 applied diffs.
-
 ## Pipeline
 
 ```
