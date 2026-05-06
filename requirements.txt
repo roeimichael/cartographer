@@ -1,0 +1,7 @@
+# Optional dependencies — scripts work without them but are faster/better with them.
+# Install with:
+#   pip install -r requirements.txt --break-system-packages
+
+pathspec>=0.11    # respects .gitignore during file walk
+networkx>=3.0     # connected components & graph utilities
+rapidfuzz>=3.0    # fast fuzzy name matching for synthesis

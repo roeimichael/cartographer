@@ -1,0 +1,130 @@
+{
+  "stats": {
+    "total_pipelines": 11,
+    "max_depth": 6,
+    "max_nodes_per_pipeline": 60
+  },
+  "pipelines": [
+    {
+      "entry": {
+        "kind": "endpoint",
+        "label": "GET /portfolio",
+        "symbol_id": "src/api/routers/correlations.py::get_portfolio_correlation",
+        "framework": "rest"
+      },
+      "node_count": 4,
+      "edge_count": 4,
+      "external_top": []
+    },
+    {
+      "entry": {
+        "kind": "endpoint",
+        "label": "GET /pairs/{symbol1}/{symbol2}",
+        "symbol_id": "src/api/routers/correlations.py::get_pair_correlation",
+        "framework": "rest"
+      },
+      "node_count": 2,
+      "edge_count": 2,
+      "external_top": []
+    },
+    {
+      "entry": {
+        "kind": "endpoint",
+        "label": "GET /",
+        "symbol_id": "src/api/routers/positions.py::get_positions",
+        "framework": "rest"
+      },
+      "node_count": 4,
+      "edge_count": 3,
+      "external_top": []
+    },
+    {
+      "entry": {
+        "kind": "endpoint",
+        "label": "GET /summary/stats",
+        "symbol_id": "src/api/routers/positions.py::get_positions_summary",
+        "framework": "rest"
+      },
+      "node_count": 4,
+      "edge_count": 3,
+      "external_top": []
+    },
+    {
+      "entry": {
+        "kind": "main",
+        "label": "main() in src/cli/backtest.py",
+        "symbol_id": "src/cli/backtest.py::main",
+        "framework": ""
+      },
+      "node_count": 23,
+      "edge_count": 22,
+      "external_top": []
+    },
+    {
+      "entry": {
+        "kind": "main",
+        "label": "main() in src/cli/daily_runner.py",
+        "symbol_id": "src/cli/daily_runner.py::main",
+        "framework": ""
+      },
+      "node_count": 28,
+      "edge_count": 37,
+      "external_top": []
+    },
+    {
+      "entry": {
+        "kind": "main",
+        "label": "main() in src/cli/gridsearch.py",
+        "symbol_id": "src/cli/gridsearch.py::main",
+        "framework": ""
+      },
+      "node_count": 20,
+      "edge_count": 19,
+      "external_top": []
+    },
+    {
+      "entry": {
+        "kind": "main",
+        "label": "main() in src/cli/live_daily.py",
+        "symbol_id": "src/cli/live_daily.py::main",
+        "framework": ""
+      },
+      "node_count": 17,
+      "edge_count": 18,
+      "external_top": []
+    },
+    {
+      "entry": {
+        "kind": "main",
+        "label": "main() in src/cli/paper_trade_daily.py",
+        "symbol_id": "src/cli/paper_trade_daily.py::main",
+        "framework": ""
+      },
+      "node_count": 30,
+      "edge_count": 34,
+      "external_top": []
+    },
+    {
+      "entry": {
+        "kind": "main",
+        "label": "main() in src/cli/preprocess.py",
+        "symbol_id": "src/cli/preprocess.py::main",
+        "framework": ""
+      },
+      "node_count": 9,
+      "edge_count": 8,
+      "external_top": []
+    },
+    {
+      "entry": {
+        "kind": "main",
+        "label": "main() in src/cli/run_multi_strategy_paper_trading.py",
+        "symbol_id": "src/cli/run_multi_strategy_paper_trading.py::main",
+        "framework": ""
+      },
+      "node_count": 31,
+      "edge_count": 35,
+      "external_top": []
+    }
+  ]
+}

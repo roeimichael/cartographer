@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+*.egg
+dist/
+build/
+*.whl
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Testing / Linting caches
+.pytest_cache/
+.ruff_cache/
+.pyright/
+.mypy_cache/
+htmlcov/
+.coverage
+coverage.xml
+
+# Environment / Secrets
+.env
+.env.*
+!.env.example
+
+# Cartographer runtime data (per-project outputs land here when not --readonly)
+.cartographer/
+
+# Claude Code (dev-specific agents and settings)
+.claude/
+
+# Tarballs from packaging
+*.tar.gz
+*.zip

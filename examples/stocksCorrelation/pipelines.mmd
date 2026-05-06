@@ -1,0 +1,374 @@
+flowchart TB
+  subgraph P0["main() in src/cli/run_multi_strategy_paper_trading.py"]
+    P0_frontend_src_hooks_use_toast_ts_update["update"]
+    P0_src_cli_paper_trade_daily_py_generate_signals["generate_signals"]
+    P0_src_cli_paper_trade_daily_py_get_current_prices["get_current_prices"]
+    P0_src_cli_run_multi_strategy_paper_trading_py_genera["generate_comparison_report"]
+    P0_src_cli_run_multi_strategy_paper_trading_py_main["main"]
+    P0_src_cli_run_multi_strategy_paper_trading_py_run_st["run_strategy"]
+    P0_src_core_config_py_load_config["load_config"]
+    P0_src_core_config_py_validate_config["validate_config"]
+    P0_src_core_data_loader_py_load_returns["load_returns"]
+    P0_src_core_data_loader_py_load_windows["load_windows"]
+    P0_src_modeling_similarity_py_compute_similarity["compute_similarity"]
+    P0_src_modeling_similarity_py_rank_analogs["rank_analogs"]
+    P0_src_modeling_similarity_py_sim_cosine["sim_cosine"]
+    P0_src_modeling_similarity_py_sim_pearson["sim_pearson"]
+    P0_src_modeling_similarity_py_sim_spearman["sim_spearman"]
+    P0_src_modeling_vote_py_vote["vote"]
+    P0_src_modeling_windows_py_normalize_window["normalize_window"]
+    P0_src_trading_paper_trading_py_PaperTradingPortfolio["PaperTradingPortfolio"]
+    P0_src_trading_paper_trading_py_PaperTradingPortfolio["close_position"]
+    P0_src_trading_paper_trading_py_PaperTradingPortfolio["get_portfolio_value"]
+    P0_src_trading_paper_trading_py_PaperTradingPortfolio["get_summary"]
+    P0_src_trading_paper_trading_py_PaperTradingPortfolio["get_total_pnl"]
+    P0_src_trading_paper_trading_py_PaperTradingPortfolio["load_state"]
+    P0_src_trading_paper_trading_py_PaperTradingPortfolio["open_position"]
+    P0_src_trading_paper_trading_py_PaperTradingPortfolio["record_daily_pnl"]
+    P0_src_trading_paper_trading_py_PaperTradingPortfolio["save_state"]
+    P0_src_trading_paper_trading_py_PaperTradingPortfolio["update_positions"]
+    P0_src_trading_paper_trading_py_Position["Position"]
+    P0_src_trading_paper_trading_py_Position_from_dict["from_dict"]
+    P0_src_trading_paper_trading_py_Position_to_dict["to_dict"]
+    P0_src_trading_paper_trading_py_Position_update_price["update_price"]
+    P0_src_cli_paper_trade_daily_py_generate_signals --> P0_src_core_data_loader_py_load_returns
+    P0_src_cli_paper_trade_daily_py_generate_signals --> P0_src_core_data_loader_py_load_windows
+    P0_src_cli_paper_trade_daily_py_generate_signals --> P0_src_modeling_similarity_py_rank_analogs
+    P0_src_cli_paper_trade_daily_py_generate_signals --> P0_src_modeling_vote_py_vote
+    P0_src_cli_paper_trade_daily_py_generate_signals --> P0_src_modeling_windows_py_normalize_window
+    P0_src_cli_paper_trade_daily_py_generate_signals --> P0_src_trading_paper_trading_py_Position_to_dict
+    P0_src_cli_run_multi_strategy_paper_trading_py_main --> P0_src_cli_run_multi_strategy_paper_trading_py_genera
+    P0_src_cli_run_multi_strategy_paper_trading_py_main --> P0_src_cli_run_multi_strategy_paper_trading_py_run_st
+    P0_src_cli_run_multi_strategy_paper_trading_py_main --> P0_src_core_config_py_load_config
+    P0_src_cli_run_multi_strategy_paper_trading_py_run_st --> P0_frontend_src_hooks_use_toast_ts_update
+    P0_src_cli_run_multi_strategy_paper_trading_py_run_st --> P0_src_cli_paper_trade_daily_py_generate_signals
+    P0_src_cli_run_multi_strategy_paper_trading_py_run_st --> P0_src_cli_paper_trade_daily_py_get_current_prices
+    P0_src_cli_run_multi_strategy_paper_trading_py_run_st --> P0_src_core_data_loader_py_load_returns
+    P0_src_cli_run_multi_strategy_paper_trading_py_run_st --> P0_src_trading_paper_trading_py_PaperTradingPortfolio
+    P0_src_cli_run_multi_strategy_paper_trading_py_run_st --> P0_src_trading_paper_trading_py_PaperTradingPortfolio
+    P0_src_cli_run_multi_strategy_paper_trading_py_run_st --> P0_src_trading_paper_trading_py_PaperTradingPortfolio
+    P0_src_cli_run_multi_strategy_paper_trading_py_run_st --> P0_src_trading_paper_trading_py_PaperTradingPortfolio
+    P0_src_cli_run_multi_strategy_paper_trading_py_run_st --> P0_src_trading_paper_trading_py_PaperTradingPortfolio
+    P0_src_cli_run_multi_strategy_paper_trading_py_run_st --> P0_src_trading_paper_trading_py_PaperTradingPortfolio
+    P0_src_cli_run_multi_strategy_paper_trading_py_run_st --> P0_src_trading_paper_trading_py_PaperTradingPortfolio
+    P0_src_cli_run_multi_strategy_paper_trading_py_run_st --> P0_src_trading_paper_trading_py_PaperTradingPortfolio
+    P0_src_cli_run_multi_strategy_paper_trading_py_run_st --> P0_src_trading_paper_trading_py_Position_to_dict
+    P0_src_core_config_py_load_config --> P0_src_core_config_py_validate_config
+    P0_src_modeling_similarity_py_compute_similarity --> P0_src_modeling_similarity_py_sim_cosine
+    P0_src_modeling_similarity_py_compute_similarity --> P0_src_modeling_similarity_py_sim_pearson
+    P0_src_modeling_similarity_py_compute_similarity --> P0_src_modeling_similarity_py_sim_spearman
+    P0_src_modeling_similarity_py_rank_analogs --> P0_src_modeling_similarity_py_compute_similarity
+    P0_src_trading_paper_trading_py_PaperTradingPortfolio --> P0_src_trading_paper_trading_py_PaperTradingPortfolio
+    P0_src_trading_paper_trading_py_PaperTradingPortfolio --> P0_src_trading_paper_trading_py_PaperTradingPortfolio
+    P0_src_trading_paper_trading_py_PaperTradingPortfolio --> P0_src_trading_paper_trading_py_Position_from_dict
+    P0_src_trading_paper_trading_py_PaperTradingPortfolio --> P0_src_trading_paper_trading_py_Position
+    P0_src_trading_paper_trading_py_PaperTradingPortfolio --> P0_src_trading_paper_trading_py_PaperTradingPortfolio
+    P0_src_trading_paper_trading_py_PaperTradingPortfolio --> P0_src_trading_paper_trading_py_PaperTradingPortfolio
+    P0_src_trading_paper_trading_py_PaperTradingPortfolio --> P0_src_trading_paper_trading_py_Position_to_dict
+    P0_src_trading_paper_trading_py_PaperTradingPortfolio --> P0_src_trading_paper_trading_py_Position_update_price
+  end
+  subgraph P1["main() in src/cli/paper_trade_daily.py"]
+    P1_src_cli_paper_trade_daily_py_generate_signals["generate_signals"]
+    P1_src_cli_paper_trade_daily_py_get_current_prices["get_current_prices"]
+    P1_src_cli_paper_trade_daily_py_main["main"]
+    P1_src_cli_paper_trade_daily_py_run_daily_paper_tradi["run_daily_paper_trading"]
+    P1_src_cli_paper_trade_daily_py_save_trades_log["save_trades_log"]
+    P1_src_core_config_py_load_config["load_config"]
+    P1_src_core_config_py_validate_config["validate_config"]
+    P1_src_core_data_loader_py_load_returns["load_returns"]
+    P1_src_core_data_loader_py_load_windows["load_windows"]
+    P1_src_modeling_similarity_py_compute_similarity["compute_similarity"]
+    P1_src_modeling_similarity_py_rank_analogs["rank_analogs"]
+    P1_src_modeling_similarity_py_sim_cosine["sim_cosine"]
+    P1_src_modeling_similarity_py_sim_pearson["sim_pearson"]
+    P1_src_modeling_similarity_py_sim_spearman["sim_spearman"]
+    P1_src_modeling_vote_py_vote["vote"]
+    P1_src_modeling_windows_py_normalize_window["normalize_window"]
+    P1_src_trading_paper_trading_py_PaperTradingPortfolio["PaperTradingPortfolio"]
+    P1_src_trading_paper_trading_py_PaperTradingPortfolio["close_position"]
+    P1_src_trading_paper_trading_py_PaperTradingPortfolio["get_portfolio_value"]
+    P1_src_trading_paper_trading_py_PaperTradingPortfolio["get_summary"]
+    P1_src_trading_paper_trading_py_PaperTradingPortfolio["get_total_pnl"]
+    P1_src_trading_paper_trading_py_PaperTradingPortfolio["load_state"]
+    P1_src_trading_paper_trading_py_PaperTradingPortfolio["open_position"]
+    P1_src_trading_paper_trading_py_PaperTradingPortfolio["record_daily_pnl"]
+    P1_src_trading_paper_trading_py_PaperTradingPortfolio["save_state"]
+    P1_src_trading_paper_trading_py_PaperTradingPortfolio["update_positions"]
+    P1_src_trading_paper_trading_py_Position["Position"]
+    P1_src_trading_paper_trading_py_Position_from_dict["from_dict"]
+    P1_src_trading_paper_trading_py_Position_to_dict["to_dict"]
+    P1_src_trading_paper_trading_py_Position_update_price["update_price"]
+    P1_src_cli_paper_trade_daily_py_generate_signals --> P1_src_core_data_loader_py_load_returns
+    P1_src_cli_paper_trade_daily_py_generate_signals --> P1_src_core_data_loader_py_load_windows
+    P1_src_cli_paper_trade_daily_py_generate_signals --> P1_src_modeling_similarity_py_rank_analogs
+    P1_src_cli_paper_trade_daily_py_generate_signals --> P1_src_modeling_vote_py_vote
+    P1_src_cli_paper_trade_daily_py_generate_signals --> P1_src_modeling_windows_py_normalize_window
+    P1_src_cli_paper_trade_daily_py_generate_signals --> P1_src_trading_paper_trading_py_Position_to_dict
+    P1_src_cli_paper_trade_daily_py_main --> P1_src_cli_paper_trade_daily_py_run_daily_paper_tradi
+    P1_src_cli_paper_trade_daily_py_main --> P1_src_core_config_py_load_config
+    P1_src_cli_paper_trade_daily_py_run_daily_paper_tradi --> P1_src_cli_paper_trade_daily_py_generate_signals
+    P1_src_cli_paper_trade_daily_py_run_daily_paper_tradi --> P1_src_cli_paper_trade_daily_py_get_current_prices
+    P1_src_cli_paper_trade_daily_py_run_daily_paper_tradi --> P1_src_cli_paper_trade_daily_py_save_trades_log
+    P1_src_cli_paper_trade_daily_py_run_daily_paper_tradi --> P1_src_core_data_loader_py_load_returns
+    P1_src_cli_paper_trade_daily_py_run_daily_paper_tradi --> P1_src_trading_paper_trading_py_PaperTradingPortfolio
+    P1_src_cli_paper_trade_daily_py_run_daily_paper_tradi --> P1_src_trading_paper_trading_py_PaperTradingPortfolio
+    P1_src_cli_paper_trade_daily_py_run_daily_paper_tradi --> P1_src_trading_paper_trading_py_PaperTradingPortfolio
+    P1_src_cli_paper_trade_daily_py_run_daily_paper_tradi --> P1_src_trading_paper_trading_py_PaperTradingPortfolio
+    P1_src_cli_paper_trade_daily_py_run_daily_paper_tradi --> P1_src_trading_paper_trading_py_PaperTradingPortfolio
+    P1_src_cli_paper_trade_daily_py_run_daily_paper_tradi --> P1_src_trading_paper_trading_py_PaperTradingPortfolio
+    P1_src_cli_paper_trade_daily_py_run_daily_paper_tradi --> P1_src_trading_paper_trading_py_PaperTradingPortfolio
+    P1_src_cli_paper_trade_daily_py_run_daily_paper_tradi --> P1_src_trading_paper_trading_py_PaperTradingPortfolio
+    P1_src_cli_paper_trade_daily_py_save_trades_log --> P1_src_trading_paper_trading_py_Position_to_dict
+    P1_src_core_config_py_load_config --> P1_src_core_config_py_validate_config
+    P1_src_modeling_similarity_py_compute_similarity --> P1_src_modeling_similarity_py_sim_cosine
+    P1_src_modeling_similarity_py_compute_similarity --> P1_src_modeling_similarity_py_sim_pearson
+    P1_src_modeling_similarity_py_compute_similarity --> P1_src_modeling_similarity_py_sim_spearman
+    P1_src_modeling_similarity_py_rank_analogs --> P1_src_modeling_similarity_py_compute_similarity
+    P1_src_trading_paper_trading_py_PaperTradingPortfolio --> P1_src_trading_paper_trading_py_PaperTradingPortfolio
+    P1_src_trading_paper_trading_py_PaperTradingPortfolio --> P1_src_trading_paper_trading_py_PaperTradingPortfolio
+    P1_src_trading_paper_trading_py_PaperTradingPortfolio --> P1_src_trading_paper_trading_py_Position_from_dict
+    P1_src_trading_paper_trading_py_PaperTradingPortfolio --> P1_src_trading_paper_trading_py_Position
+    P1_src_trading_paper_trading_py_PaperTradingPortfolio --> P1_src_trading_paper_trading_py_PaperTradingPortfolio
+    P1_src_trading_paper_trading_py_PaperTradingPortfolio --> P1_src_trading_paper_trading_py_PaperTradingPortfolio
+    P1_src_trading_paper_trading_py_PaperTradingPortfolio --> P1_src_trading_paper_trading_py_Position_to_dict
+    P1_src_trading_paper_trading_py_PaperTradingPortfolio --> P1_src_trading_paper_trading_py_Position_update_price
+  end
+  subgraph P2["main() in src/cli/daily_runner.py"]
+    P2_src_cli_daily_runner_py_append_to_ledger["append_to_ledger"]
+    P2_src_cli_daily_runner_py_compute_pnl["compute_pnl"]
+    P2_src_cli_daily_runner_py_generate_live_signals["generate_live_signals"]
+    P2_src_cli_daily_runner_py_get_prices["get_prices"]
+    P2_src_cli_daily_runner_py_load_positions_state["load_positions_state"]
+    P2_src_cli_daily_runner_py_main["main"]
+    P2_src_cli_daily_runner_py_run_position_closing["run_position_closing"]
+    P2_src_cli_daily_runner_py_run_position_monitoring["run_position_monitoring"]
+    P2_src_cli_daily_runner_py_run_signal_generation["run_signal_generation"]
+    P2_src_cli_daily_runner_py_save_positions_state["save_positions_state"]
+    P2_src_cli_daily_runner_py_should_close_position["should_close_position"]
+    P2_src_dataio_fetch_py_fetch_universe["fetch_universe"]
+    P2_src_dataio_live_append_py_append_new_bars["append_new_bars"]
+    P2_src_dataio_prep_py_prepare_returns["prepare_returns"]
+    P2_src_modeling_similarity_py_compute_similarity["compute_similarity"]
+    P2_src_modeling_similarity_py_rank_analogs["rank_analogs"]
+    P2_src_modeling_similarity_py_sim_cosine["sim_cosine"]
+    P2_src_modeling_similarity_py_sim_pearson["sim_pearson"]
+    P2_src_modeling_similarity_py_sim_spearman["sim_spearman"]
+    P2_src_modeling_vote_py_vote["vote"]
+    P2_src_modeling_windows_py_build_windows["build_windows"]
+    P2_src_modeling_windows_py_normalize_window["normalize_window"]
+    P2_src_trading_monitor_py_classify_alert["classify_alert"]
+    P2_src_trading_monitor_py_correlation_decay["correlation_decay"]
+    P2_src_trading_monitor_py_directional_concordance["directional_concordance"]
+    P2_src_trading_monitor_py_pattern_deviation_z["pattern_deviation_z"]
+    P2_src_trading_monitor_py_similarity_retention["similarity_retention"]
+    P2_src_trading_paper_trading_py_Position_to_dict["to_dict"]
+    P2_src_cli_daily_runner_py_generate_live_signals --> P2_src_modeling_similarity_py_rank_analogs
+    P2_src_cli_daily_runner_py_generate_live_signals --> P2_src_modeling_vote_py_vote
+    P2_src_cli_daily_runner_py_generate_live_signals --> P2_src_modeling_windows_py_normalize_window
+    P2_src_cli_daily_runner_py_generate_live_signals --> P2_src_trading_paper_trading_py_Position_to_dict
+    P2_src_cli_daily_runner_py_main --> P2_src_cli_daily_runner_py_run_position_closing
+    P2_src_cli_daily_runner_py_main --> P2_src_cli_daily_runner_py_run_position_monitoring
+    P2_src_cli_daily_runner_py_main --> P2_src_cli_daily_runner_py_run_signal_generation
+    P2_src_cli_daily_runner_py_run_position_closing --> P2_src_cli_daily_runner_py_append_to_ledger
+    P2_src_cli_daily_runner_py_run_position_closing --> P2_src_cli_daily_runner_py_compute_pnl
+    P2_src_cli_daily_runner_py_run_position_closing --> P2_src_cli_daily_runner_py_get_prices
+    P2_src_cli_daily_runner_py_run_position_closing --> P2_src_cli_daily_runner_py_load_positions_state
+    P2_src_cli_daily_runner_py_run_position_closing --> P2_src_cli_daily_runner_py_save_positions_state
+    P2_src_cli_daily_runner_py_run_position_closing --> P2_src_cli_daily_runner_py_should_close_position
+    P2_src_cli_daily_runner_py_run_position_monitoring --> P2_src_cli_daily_runner_py_load_positions_state
+    P2_src_cli_daily_runner_py_run_position_monitoring --> P2_src_cli_daily_runner_py_save_positions_state
+    P2_src_cli_daily_runner_py_run_position_monitoring --> P2_src_trading_monitor_py_classify_alert
+    P2_src_cli_daily_runner_py_run_position_monitoring --> P2_src_trading_monitor_py_correlation_decay
+    P2_src_cli_daily_runner_py_run_position_monitoring --> P2_src_trading_monitor_py_directional_concordance
+    P2_src_cli_daily_runner_py_run_position_monitoring --> P2_src_trading_monitor_py_pattern_deviation_z
+    P2_src_cli_daily_runner_py_run_position_monitoring --> P2_src_trading_monitor_py_similarity_retention
+    P2_src_cli_daily_runner_py_run_position_monitoring --> P2_src_trading_paper_trading_py_Position_to_dict
+    P2_src_cli_daily_runner_py_run_signal_generation --> P2_src_cli_daily_runner_py_generate_live_signals
+    P2_src_cli_daily_runner_py_run_signal_generation --> P2_src_cli_daily_runner_py_load_positions_state
+    P2_src_cli_daily_runner_py_run_signal_generation --> P2_src_cli_daily_runner_py_save_positions_state
+    P2_src_cli_daily_runner_py_run_signal_generation --> P2_src_dataio_fetch_py_fetch_universe
+    P2_src_cli_daily_runner_py_run_signal_generation --> P2_src_dataio_live_append_py_append_new_bars
+    P2_src_cli_daily_runner_py_run_signal_generation --> P2_src_dataio_prep_py_prepare_returns
+    P2_src_cli_daily_runner_py_run_signal_generation --> P2_src_modeling_windows_py_build_windows
+    P2_src_modeling_similarity_py_compute_similarity --> P2_src_modeling_similarity_py_sim_cosine
+    P2_src_modeling_similarity_py_compute_similarity --> P2_src_modeling_similarity_py_sim_pearson
+    P2_src_modeling_similarity_py_compute_similarity --> P2_src_modeling_similarity_py_sim_spearman
+    P2_src_modeling_similarity_py_rank_analogs --> P2_src_modeling_similarity_py_compute_similarity
+    P2_src_modeling_windows_py_build_windows --> P2_src_modeling_windows_py_normalize_window
+    P2_src_modeling_windows_py_build_windows --> P2_src_trading_paper_trading_py_Position_to_dict
+    P2_src_trading_monitor_py_pattern_deviation_z --> P2_src_modeling_windows_py_normalize_window
+    P2_src_trading_monitor_py_similarity_retention --> P2_src_modeling_similarity_py_compute_similarity
+    P2_src_trading_monitor_py_similarity_retention --> P2_src_modeling_windows_py_normalize_window
+  end
+  subgraph P3["main() in src/cli/backtest.py"]
+    P3_src_cli_backtest_py_load_config["load_config"]
+    P3_src_cli_backtest_py_main["main"]
+    P3_src_core_data_loader_py_ensure_directory["ensure_directory"]
+    P3_src_core_data_loader_py_load_returns["load_returns"]
+    P3_src_core_data_loader_py_load_returns_and_windows["load_returns_and_windows"]
+    P3_src_core_data_loader_py_load_windows["load_windows"]
+    P3_src_evals_metrics_py_equity_from_trades["equity_from_trades"]
+    P3_src_evals_metrics_py_summary_metrics["summary_metrics"]
+    P3_src_modeling_similarity_py_compute_similarity["compute_similarity"]
+    P3_src_modeling_similarity_py_rank_analogs["rank_analogs"]
+    P3_src_modeling_similarity_py_sim_cosine["sim_cosine"]
+    P3_src_modeling_similarity_py_sim_pearson["sim_pearson"]
+    P3_src_modeling_similarity_py_sim_spearman["sim_spearman"]
+    P3_src_modeling_vote_py_vote["vote"]
+    P3_src_modeling_windows_py_normalize_window["normalize_window"]
+    P3_src_trading_engine_py_BacktestDataError["BacktestDataError"]
+    P3_src_trading_engine_py__configure_test_period["_configure_test_period"]
+    P3_src_trading_engine_py__execute_trading_day["_execute_trading_day"]
+    P3_src_trading_engine_py__load_backtest_data["_load_backtest_data"]
+    P3_src_trading_engine_py__save_backtest_results["_save_backtest_results"]
+    P3_src_trading_engine_py_generate_daily_signals["generate_daily_signals"]
+    P3_src_trading_engine_py_run_backtest["run_backtest"]
+    P3_src_trading_paper_trading_py_Position_to_dict["to_dict"]
+    P3_src_cli_backtest_py_main --> P3_src_cli_backtest_py_load_config
+    P3_src_cli_backtest_py_main --> P3_src_trading_engine_py_run_backtest
+    P3_src_core_data_loader_py_load_returns_and_windows --> P3_src_core_data_loader_py_load_returns
+    P3_src_core_data_loader_py_load_returns_and_windows --> P3_src_core_data_loader_py_load_windows
+    P3_src_modeling_similarity_py_compute_similarity --> P3_src_modeling_similarity_py_sim_cosine
+    P3_src_modeling_similarity_py_compute_similarity --> P3_src_modeling_similarity_py_sim_pearson
+    P3_src_modeling_similarity_py_compute_similarity --> P3_src_modeling_similarity_py_sim_spearman
+    P3_src_modeling_similarity_py_rank_analogs --> P3_src_modeling_similarity_py_compute_similarity
+    P3_src_trading_engine_py__execute_trading_day --> P3_src_trading_engine_py_generate_daily_signals
+    P3_src_trading_engine_py__load_backtest_data --> P3_src_core_data_loader_py_load_returns_and_windows
+    P3_src_trading_engine_py__load_backtest_data --> P3_src_trading_engine_py_BacktestDataError
+    P3_src_trading_engine_py__save_backtest_results --> P3_src_core_data_loader_py_ensure_directory
+    P3_src_trading_engine_py_generate_daily_signals --> P3_src_modeling_similarity_py_rank_analogs
+    P3_src_trading_engine_py_generate_daily_signals --> P3_src_modeling_vote_py_vote
+    P3_src_trading_engine_py_generate_daily_signals --> P3_src_modeling_windows_py_normalize_window
+    P3_src_trading_engine_py_generate_daily_signals --> P3_src_trading_paper_trading_py_Position_to_dict
+    P3_src_trading_engine_py_run_backtest --> P3_src_evals_metrics_py_equity_from_trades
+    P3_src_trading_engine_py_run_backtest --> P3_src_evals_metrics_py_summary_metrics
+    P3_src_trading_engine_py_run_backtest --> P3_src_trading_engine_py__configure_test_period
+    P3_src_trading_engine_py_run_backtest --> P3_src_trading_engine_py__execute_trading_day
+    P3_src_trading_engine_py_run_backtest --> P3_src_trading_engine_py__load_backtest_data
+    P3_src_trading_engine_py_run_backtest --> P3_src_trading_engine_py__save_backtest_results
+  end
+  subgraph P4["main() in src/cli/gridsearch.py"]
+    P4_src_cli_gridsearch_py_main["main"]
+    P4_src_cli_gridsearch_py_run_grid_search["run_grid_search"]
+    P4_src_core_data_loader_py_ensure_directory["ensure_directory"]
+    P4_src_core_data_loader_py_load_returns["load_returns"]
+    P4_src_core_data_loader_py_load_returns_and_windows["load_returns_and_windows"]
+    P4_src_core_data_loader_py_load_windows["load_windows"]
+    P4_src_evals_metrics_py_equity_from_trades["equity_from_trades"]
+    P4_src_evals_metrics_py_summary_metrics["summary_metrics"]
+    P4_src_modeling_similarity_py_compute_similarity["compute_similarity"]
+    P4_src_modeling_similarity_py_rank_analogs["rank_analogs"]
+    P4_src_modeling_vote_py_vote["vote"]
+    P4_src_modeling_windows_py_normalize_window["normalize_window"]
+    P4_src_trading_engine_py_BacktestDataError["BacktestDataError"]
+    P4_src_trading_engine_py__configure_test_period["_configure_test_period"]
+    P4_src_trading_engine_py__execute_trading_day["_execute_trading_day"]
+    P4_src_trading_engine_py__load_backtest_data["_load_backtest_data"]
+    P4_src_trading_engine_py__save_backtest_results["_save_backtest_results"]
+    P4_src_trading_engine_py_generate_daily_signals["generate_daily_signals"]
+    P4_src_trading_engine_py_run_backtest["run_backtest"]
+    P4_src_trading_paper_trading_py_Position_to_dict["to_dict"]
+    P4_src_cli_gridsearch_py_main --> P4_src_cli_gridsearch_py_run_grid_search
+    P4_src_cli_gridsearch_py_run_grid_search --> P4_src_trading_engine_py_run_backtest
+    P4_src_core_data_loader_py_load_returns_and_windows --> P4_src_core_data_loader_py_load_returns
+    P4_src_core_data_loader_py_load_returns_and_windows --> P4_src_core_data_loader_py_load_windows
+    P4_src_modeling_similarity_py_rank_analogs --> P4_src_modeling_similarity_py_compute_similarity
+    P4_src_trading_engine_py__execute_trading_day --> P4_src_trading_engine_py_generate_daily_signals
+    P4_src_trading_engine_py__load_backtest_data --> P4_src_core_data_loader_py_load_returns_and_windows
+    P4_src_trading_engine_py__load_backtest_data --> P4_src_trading_engine_py_BacktestDataError
+    P4_src_trading_engine_py__save_backtest_results --> P4_src_core_data_loader_py_ensure_directory
+    P4_src_trading_engine_py_generate_daily_signals --> P4_src_modeling_similarity_py_rank_analogs
+    P4_src_trading_engine_py_generate_daily_signals --> P4_src_modeling_vote_py_vote
+    P4_src_trading_engine_py_generate_daily_signals --> P4_src_modeling_windows_py_normalize_window
+    P4_src_trading_engine_py_generate_daily_signals --> P4_src_trading_paper_trading_py_Position_to_dict
+    P4_src_trading_engine_py_run_backtest --> P4_src_evals_metrics_py_equity_from_trades
+    P4_src_trading_engine_py_run_backtest --> P4_src_evals_metrics_py_summary_metrics
+    P4_src_trading_engine_py_run_backtest --> P4_src_trading_engine_py__configure_test_period
+    P4_src_trading_engine_py_run_backtest --> P4_src_trading_engine_py__execute_trading_day
+    P4_src_trading_engine_py_run_backtest --> P4_src_trading_engine_py__load_backtest_data
+    P4_src_trading_engine_py_run_backtest --> P4_src_trading_engine_py__save_backtest_results
+  end
+  subgraph P5["main() in src/cli/live_daily.py"]
+    P5_src_cli_live_daily_py_generate_live_signals["generate_live_signals"]
+    P5_src_cli_live_daily_py_load_positions_state["load_positions_state"]
+    P5_src_cli_live_daily_py_main["main"]
+    P5_src_cli_live_daily_py_run_live_daily["run_live_daily"]
+    P5_src_cli_live_daily_py_save_positions_state["save_positions_state"]
+    P5_src_dataio_fetch_py_fetch_universe["fetch_universe"]
+    P5_src_dataio_live_append_py_append_new_bars["append_new_bars"]
+    P5_src_dataio_prep_py_prepare_returns["prepare_returns"]
+    P5_src_modeling_similarity_py_compute_similarity["compute_similarity"]
+    P5_src_modeling_similarity_py_rank_analogs["rank_analogs"]
+    P5_src_modeling_similarity_py_sim_cosine["sim_cosine"]
+    P5_src_modeling_similarity_py_sim_pearson["sim_pearson"]
+    P5_src_modeling_similarity_py_sim_spearman["sim_spearman"]
+    P5_src_modeling_vote_py_vote["vote"]
+    P5_src_modeling_windows_py_build_windows["build_windows"]
+    P5_src_modeling_windows_py_normalize_window["normalize_window"]
+    P5_src_trading_paper_trading_py_Position_to_dict["to_dict"]
+    P5_src_cli_live_daily_py_generate_live_signals --> P5_src_modeling_similarity_py_rank_analogs
+    P5_src_cli_live_daily_py_generate_live_signals --> P5_src_modeling_vote_py_vote
+    P5_src_cli_live_daily_py_generate_live_signals --> P5_src_modeling_windows_py_normalize_window
+    P5_src_cli_live_daily_py_generate_live_signals --> P5_src_trading_paper_trading_py_Position_to_dict
+    P5_src_cli_live_daily_py_main --> P5_src_cli_live_daily_py_run_live_daily
+    P5_src_cli_live_daily_py_run_live_daily --> P5_src_cli_live_daily_py_generate_live_signals
+    P5_src_cli_live_daily_py_run_live_daily --> P5_src_cli_live_daily_py_load_positions_state
+    P5_src_cli_live_daily_py_run_live_daily --> P5_src_cli_live_daily_py_save_positions_state
+    P5_src_cli_live_daily_py_run_live_daily --> P5_src_dataio_fetch_py_fetch_universe
+    P5_src_cli_live_daily_py_run_live_daily --> P5_src_dataio_live_append_py_append_new_bars
+    P5_src_cli_live_daily_py_run_live_daily --> P5_src_dataio_prep_py_prepare_returns
+    P5_src_cli_live_daily_py_run_live_daily --> P5_src_modeling_windows_py_build_windows
+    P5_src_modeling_similarity_py_compute_similarity --> P5_src_modeling_similarity_py_sim_cosine
+    P5_src_modeling_similarity_py_compute_similarity --> P5_src_modeling_similarity_py_sim_pearson
+    P5_src_modeling_similarity_py_compute_similarity --> P5_src_modeling_similarity_py_sim_spearman
+    P5_src_modeling_similarity_py_rank_analogs --> P5_src_modeling_similarity_py_compute_similarity
+    P5_src_modeling_windows_py_build_windows --> P5_src_modeling_windows_py_normalize_window
+    P5_src_modeling_windows_py_build_windows --> P5_src_trading_paper_trading_py_Position_to_dict
+  end
+  subgraph P6["main() in src/cli/preprocess.py"]
+    P6_src_cli_preprocess_py_check_existing_data["check_existing_data"]
+    P6_src_cli_preprocess_py_main["main"]
+    P6_src_cli_preprocess_py_run_preprocessing["run_preprocessing"]
+    P6_src_dataio_fetch_py_fetch_prices["fetch_prices"]
+    P6_src_dataio_fetch_py_fetch_universe["fetch_universe"]
+    P6_src_dataio_prep_py_prepare_returns["prepare_returns"]
+    P6_src_modeling_windows_py_build_windows["build_windows"]
+    P6_src_modeling_windows_py_normalize_window["normalize_window"]
+    P6_src_trading_paper_trading_py_Position_to_dict["to_dict"]
+    P6_src_cli_preprocess_py_main --> P6_src_cli_preprocess_py_run_preprocessing
+    P6_src_cli_preprocess_py_run_preprocessing --> P6_src_cli_preprocess_py_check_existing_data
+    P6_src_cli_preprocess_py_run_preprocessing --> P6_src_dataio_fetch_py_fetch_prices
+    P6_src_cli_preprocess_py_run_preprocessing --> P6_src_dataio_fetch_py_fetch_universe
+    P6_src_cli_preprocess_py_run_preprocessing --> P6_src_dataio_prep_py_prepare_returns
+    P6_src_cli_preprocess_py_run_preprocessing --> P6_src_modeling_windows_py_build_windows
+    P6_src_modeling_windows_py_build_windows --> P6_src_modeling_windows_py_normalize_window
+    P6_src_modeling_windows_py_build_windows --> P6_src_trading_paper_trading_py_Position_to_dict
+  end
+  subgraph P7["GET /portfolio"]
+    P7_src_api_routers_correlations_py_get_portfolio_corr["get_portfolio_correlation"]
+    P7_src_api_services_positions_service_py_PositionsSer["_calculate_days_held"]
+    P7_src_api_services_positions_service_py_PositionsSer["_empty_response"]
+    P7_src_api_services_positions_service_py_PositionsSer["get_all_positions"]
+    P7_src_api_routers_correlations_py_get_portfolio_corr --> P7_src_api_routers_correlations_py_get_portfolio_corr
+    P7_src_api_routers_correlations_py_get_portfolio_corr --> P7_src_api_services_positions_service_py_PositionsSer
+    P7_src_api_services_positions_service_py_PositionsSer --> P7_src_api_services_positions_service_py_PositionsSer
+    P7_src_api_services_positions_service_py_PositionsSer --> P7_src_api_services_positions_service_py_PositionsSer
+  end
+  subgraph P8["GET /"]
+    P8_src_api_routers_positions_py_get_positions["get_positions"]
+    P8_src_api_services_positions_service_py_PositionsSer["_calculate_days_held"]
+    P8_src_api_services_positions_service_py_PositionsSer["_empty_response"]
+    P8_src_api_services_positions_service_py_PositionsSer["get_all_positions"]
+    P8_src_api_routers_positions_py_get_positions --> P8_src_api_services_positions_service_py_PositionsSer
+    P8_src_api_services_positions_service_py_PositionsSer --> P8_src_api_services_positions_service_py_PositionsSer
+    P8_src_api_services_positions_service_py_PositionsSer --> P8_src_api_services_positions_service_py_PositionsSer
+  end
+  subgraph P9["GET /summary/stats"]
+    P9_src_api_routers_positions_py_get_positions_summary["get_positions_summary"]
+    P9_src_api_services_positions_service_py_PositionsSer["_calculate_days_held"]
+    P9_src_api_services_positions_service_py_PositionsSer["_empty_response"]
+    P9_src_api_services_positions_service_py_PositionsSer["get_all_positions"]
+    P9_src_api_routers_positions_py_get_positions_summary --> P9_src_api_services_positions_service_py_PositionsSer
+    P9_src_api_services_positions_service_py_PositionsSer --> P9_src_api_services_positions_service_py_PositionsSer
+    P9_src_api_services_positions_service_py_PositionsSer --> P9_src_api_services_positions_service_py_PositionsSer
+  end

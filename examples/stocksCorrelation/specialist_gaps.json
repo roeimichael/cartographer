@@ -1,0 +1,19 @@
+{
+  "gaps": [
+    {
+      "segment": "frontend",
+      "file_count": 8,
+      "integrations": [],
+      "directory_prefix": "frontend",
+      "assigned_agent": "generalist-reviewer",
+      "score": 80,
+      "reason": "low score (80) \u2014 no specialist matched well",
+      "runners_up": []
+    }
+  ],
+  "threshold": 1500,
+  "stats": {
+    "count": 1,
+    "total_segments": 10
+  }
+}

@@ -1,0 +1,8 @@
+flowchart LR
+  src_api_routers_correlations_py_get_correlation_ma["get_correlation_matrix<br/><small>src/api/routers/correlations.py:18</small>"]
+  src_api_routers_correlations_py_get_pair_correlati["get_pair_correlation<br/><small>src/api/routers/correlations.py:89</small>"]
+  src_api_routers_correlations_py_get_pair_correlati:::entry
+  src_api_routers_correlations_py_get_correlation_ma --> src_api_routers_correlations_py_get_correlation_ma
+  src_api_routers_correlations_py_get_pair_correlati --> src_api_routers_correlations_py_get_correlation_ma
+classDef entry fill:#fef3c7,stroke:#d97706,stroke-width:2px
+classDef external fill:#fee2e2,stroke:#991b1b,stroke-dasharray:3 3

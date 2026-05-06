@@ -1,0 +1,45 @@
+# Specialist registry — maps detected integrations to skills.sh package names.
+#
+# When a segment hits a coverage gap (no installed specialist scored well),
+# scripts/install_specialist.py uses this registry to suggest packages from
+# skills.sh that the user could install on demand.
+#
+# Format:
+#   <integration_label>:
+#     package: <skills.sh package name>
+#     specialist_name: <agent name once installed>
+#     description: <one-line>
+#     install: <exact CLI command>
+#     verified: <true|false> — has someone confirmed this package exists?
+#
+# This file ships mostly empty. Contributions welcome — verified entries
+# only. Until skills.sh exposes a stable registry API we can query, this
+# is the closest we get to dynamic discovery.
+#
+# To add an entry: install the package, confirm `npx skills add <name>`
+# works, then PR with verified: true.
+
+# --- examples (currently unverified — placeholders) ---
+
+# graphql:
+#   package: graphql-api-reviewer
+#   specialist_name: graphql-api-reviewer
+#   description: GraphQL schema federation, N+1, dataloader, persisted queries
+#   install: npx skills add graphql-api-reviewer
+#   verified: false
+#
+# solana:
+#   package: solana-reviewer
+#   specialist_name: solana-reviewer
+#   description: Web3 / Anchor / SPL token correctness, account derivation
+#   install: npx skills add solana-reviewer
+#   verified: false
+#
+# terraform:
+#   package: terraform-reviewer
+#   specialist_name: terraform-reviewer
+#   description: HCL state drift, secret leakage, provider versioning
+#   install: npx skills add terraform-reviewer
+#   verified: false
+
+# Real entries below — append as you verify them:

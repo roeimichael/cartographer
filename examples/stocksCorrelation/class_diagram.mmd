@@ -1,0 +1,221 @@
+classDiagram
+  class ApiClient
+  class CorrelationPair
+    CorrelationPair : symbol1
+    CorrelationPair : symbol2
+    CorrelationPair : correlation
+    CorrelationPair : lookback_days
+  class CorrelationMatrix
+    CorrelationMatrix : symbols
+    CorrelationMatrix : matrix
+    CorrelationMatrix : lookback_days
+    CorrelationMatrix : top_positive
+    CorrelationMatrix : top_negative
+  class PortfolioCorrelation
+    PortfolioCorrelation : portfolio_symbols
+    PortfolioCorrelation : correlation_matrix
+    PortfolioCorrelation : diversification_score
+    PortfolioCorrelation : concentration_risk
+    PortfolioCorrelation : suggested_hedges
+  class MonitoringMetrics
+    MonitoringMetrics : symbol
+    MonitoringMetrics : similarity_retention
+    MonitoringMetrics : directional_concordance
+    MonitoringMetrics : correlation_decay
+    MonitoringMetrics : pattern_deviation_z
+  class Alert
+    Alert : symbol
+    Alert : alert_level
+    Alert : date
+    Alert : metrics
+    Alert : message
+    Alert : recommended_action
+  class AlertsSummary
+    AlertsSummary : date
+    AlertsSummary : total_alerts
+    AlertsSummary : green
+    AlertsSummary : yellow
+    AlertsSummary : red
+    AlertsSummary : error
+  class Position
+    Position : symbol
+    Position : entry_date
+    Position : entry_price
+    Position : current_price
+    Position : shares
+    Position : notional
+  class PositionsSummary
+    PositionsSummary : total_positions
+    PositionsSummary : total_notional
+    PositionsSummary : total_pnl
+    PositionsSummary : total_pnl_pct
+    PositionsSummary : positions
+    PositionsSummary : alert_breakdown
+  class PositionResponse
+    PositionResponse : status
+    PositionResponse : data
+  class Signal
+    Signal : symbol
+    Signal : signal
+    Signal : confidence
+    Signal : p_up
+    Signal : p_down
+    Signal : n_analogs
+  class SignalResponse
+    SignalResponse : status
+    SignalResponse : date
+    SignalResponse : total_signals
+    SignalResponse : up_signals
+    SignalResponse : down_signals
+    SignalResponse : abstain_signals
+  class Trade
+    Trade : symbol
+    Trade : entry_date
+    Trade : exit_date
+    Trade : entry_price
+    Trade : exit_price
+    Trade : shares
+  class TradeHistory
+    TradeHistory : total_trades
+    TradeHistory : winning_trades
+    TradeHistory : losing_trades
+    TradeHistory : win_rate
+    TradeHistory : total_pnl
+    TradeHistory : avg_win
+  class ConnectionManager
+    ConnectionManager : __init__()
+    ConnectionManager : connect()
+    ConnectionManager : disconnect()
+    ConnectionManager : broadcast()
+  class DailyRunRequest
+    DailyRunRequest : date
+    DailyRunRequest : skip_signals
+    DailyRunRequest : skip_monitor
+    DailyRunRequest : skip_close
+    DailyRunRequest : config
+  class BacktestRequest
+    BacktestRequest : config
+  class GridSearchRequest
+    GridSearchRequest : config
+  class PreprocessRequest
+    PreprocessRequest : config
+    PreprocessRequest : force_full
+  class CorrelationsService
+    CorrelationsService : __init__()
+    CorrelationsService : get_correlation_matrix()
+    CorrelationsService : get_portfolio_correlation()
+    CorrelationsService : _find_top_pairs()
+    CorrelationsService : _calculate_diversification_score()
+    CorrelationsService : _find_hedge_candidates()
+    CorrelationsService : _empty_response()
+    CorrelationsService : _empty_portfolio_response()
+    CorrelationsService : config_path
+    CorrelationsService : returns_file
+  class MonitoringService
+    MonitoringService : __init__()
+    MonitoringService : get_latest_alerts()
+    MonitoringService : get_alerts_by_date()
+    MonitoringService : get_alert_history()
+    MonitoringService : _empty_response()
+    MonitoringService : config_path
+    MonitoringService : alerts_dir
+  class PositionsService
+    PositionsService : __init__()
+    PositionsService : get_all_positions()
+    PositionsService : get_position_by_symbol()
+    PositionsService : _calculate_days_held()
+    PositionsService : _empty_response()
+    PositionsService : config_path
+    PositionsService : positions_file
+    PositionsService : ledger_file
+  class SignalsService
+    SignalsService : __init__()
+    SignalsService : get_latest_signals()
+    SignalsService : get_signals_by_date()
+    SignalsService : get_signal_history()
+    SignalsService : _empty_response()
+    SignalsService : config_path
+    SignalsService : signals_dir
+  class TradesService
+    TradesService : __init__()
+    TradesService : get_trade_history()
+    TradesService : get_recent_trades()
+    TradesService : get_performance_by_symbol()
+    TradesService : _calculate_days_held()
+    TradesService : _empty_response()
+    TradesService : config_path
+    TradesService : ledger_file
+  class Paths
+    Paths : ROOT
+    Paths : DATA_ROOT
+    Paths : DATA_RAW
+    Paths : DATA_PROCESSED
+    Paths : DATA_LIVE_INGEST
+    Paths : DATA_PAPER_TRADING
+  class TradingConstants
+    TradingConstants : TRADING_DAYS_PER_YEAR
+    TradingConstants : BUSINESS_DAYS_PER_MONTH
+    TradingConstants : DEFAULT_INITIAL_CAPITAL
+    TradingConstants : DEFAULT_POSITION_SIZE
+    TradingConstants : DEFAULT_MIN_HISTORY_DAYS
+    TradingConstants : EPSILON
+  class MonitoringConstants
+    MonitoringConstants : CORR_WINDOW_DAYS
+    MonitoringConstants : CORR_LOOKBACK_DAYS
+    MonitoringConstants : DEVIATION_WINDOW_DAYS
+    MonitoringConstants : SR_FLOOR_RED
+    MonitoringConstants : DC_FLOOR_RED
+    MonitoringConstants : CD_DROP_ALERT_RED
+  class HedgingConstants
+    HedgingConstants : DEFAULT_BASKET_SIZE
+    HedgingConstants : DEFAULT_MIN_NEG_SIM
+    HedgingConstants : DEFAULT_TARGET_RATIO
+    HedgingConstants : VOL_WINDOW_DAYS
+    HedgingConstants : REBALANCE_DAYS
+  class PlotConstants
+    PlotConstants : DEFAULT_DPI
+    PlotConstants : DEFAULT_FIGURE_SIZE
+    PlotConstants : COLORMAP
+  class FileFormats
+    FileFormats : TIMESTAMP_FORMAT
+    FileFormats : DATE_FORMAT
+    FileFormats : SIGNALS_FILE_TEMPLATE
+    FileFormats : ALERTS_FILE_TEMPLATE
+    FileFormats : POSITIONS_FILE_TEMPLATE
+    FileFormats : REPORT_FILE_TEMPLATE
+  class ValidationConstants
+    ValidationConstants : DEFAULT_MAX_RETRIES
+    ValidationConstants : RETRY_BACKOFF_BASE
+    ValidationConstants : MAX_MISSING_PCT
+    ValidationConstants : FORWARD_FILL_LIMIT
+  class LoggingConstants
+    LoggingConstants : PROGRESS_LOG_INTERVAL
+    LoggingConstants : LEVEL_DEBUG
+    LoggingConstants : LEVEL_INFO
+    LoggingConstants : LEVEL_WARNING
+    LoggingConstants : LEVEL_ERROR
+  class BacktestDataError
+  class SignalGenerationError
+  class Position
+    Position : __init__()
+    Position : update_price()
+    Position : to_dict()
+    Position : from_dict()
+    Position : symbol
+    Position : signal
+    Position : entry_date
+    Position : entry_price
+    Position : shares
+    Position : notional
+  class PaperTradingPortfolio
+    PaperTradingPortfolio : __init__()
+    PaperTradingPortfolio : save_state()
+    PaperTradingPortfolio : load_state()
+    PaperTradingPortfolio : open_position()
+    PaperTradingPortfolio : close_position()
+    PaperTradingPortfolio : update_positions()
+    PaperTradingPortfolio : get_portfolio_value()
+    PaperTradingPortfolio : get_total_pnl()
+    PaperTradingPortfolio : initial_capital
+    PaperTradingPortfolio : cash
+    PaperTradingPortfolio : state_file

@@ -1,0 +1,399 @@
+{
+  "segments": [
+    {
+      "name": "api@src",
+      "files": [
+        "src/api/main.py",
+        "src/api/models/__init__.py",
+        "src/api/routers/correlations.py",
+        "src/api/routers/monitoring.py",
+        "src/api/routers/operations.py",
+        "src/api/routers/positions.py",
+        "src/api/routers/signals.py",
+        "src/api/routers/trades.py",
+        "src/api/services/__init__.py",
+        "src/api/services/correlations_service.py",
+        "src/api/services/monitoring_service.py",
+        "src/api/services/positions_service.py",
+        "src/api/services/signals_service.py",
+        "src/api/services/trades_service.py",
+        "src/cli/__init__.py",
+        "src/cli/backtest.py",
+        "src/cli/daily_runner.py",
+        "src/cli/export_to_excel.py",
+        "src/cli/gridsearch.py",
+        "src/cli/live_daily.py",
+        "src/cli/paper_trade_daily.py",
+        "src/cli/preprocess.py",
+        "src/cli/run_multi_strategy_paper_trading.py",
+        "src/core/config.py",
+        "src/core/constants.py",
+        "src/core/data_loader.py",
+        "src/core/logger.py",
+        "src/dataio/fetch.py",
+        "src/dataio/live_append.py",
+        "src/dataio/prep.py",
+        "src/evals/correlation_matrix.py",
+        "src/evals/metrics.py",
+        "src/modeling/similarity.py",
+        "src/modeling/vote.py",
+        "src/modeling/windows.py",
+        "src/trading/engine.py",
+        "src/trading/hedging.py",
+        "src/trading/monitor.py",
+        "src/trading/paper_trading.py"
+      ],
+      "file_count": 39,
+      "loc": 7101,
+      "symbol_count": 170,
+      "integrations": [
+        "pandas",
+        "filesystem",
+        "numpy",
+        "fastapi",
+        "pyarrow"
+      ],
+      "endpoints": [
+        {
+          "method": "GET",
+          "path": "/",
+          "file": "src/api/main.py"
+        },
+        {
+          "method": "GET",
+          "path": "/api/health",
+          "file": "src/api/main.py"
+        },
+        {
+          "method": "GET",
+          "path": "/matrix",
+          "file": "src/api/routers/correlations.py"
+        },
+        {
+          "method": "GET",
+          "path": "/portfolio",
+          "file": "src/api/routers/correlations.py"
+        },
+        {
+          "method": "GET",
+          "path": "/pairs/{symbol1}/{symbol2}",
+          "file": "src/api/routers/correlations.py"
+        },
+        {
+          "method": "GET",
+          "path": "/alerts/latest",
+          "file": "src/api/routers/monitoring.py"
+        },
+        {
+          "method": "GET",
+          "path": "/alerts/date/{date}",
+          "file": "src/api/routers/monitoring.py"
+        },
+        {
+          "method": "GET",
+          "path": "/alerts/history/{symbol}",
+          "file": "src/api/routers/monitoring.py"
+        },
+        {
+          "method": "POST",
+          "path": "/daily",
+          "file": "src/api/routers/operations.py"
+        },
+        {
+          "method": "POST",
+          "path": "/backtest",
+          "file": "src/api/routers/operations.py"
+        },
+        {
+          "method": "POST",
+          "path": "/gridsearch",
+          "file": "src/api/routers/operations.py"
+        },
+        {
+          "method": "POST",
+          "path": "/preprocess",
+          "file": "src/api/routers/operations.py"
+        },
+        {
+          "method": "GET",
+          "path": "/status/{task_id}",
+          "file": "src/api/routers/operations.py"
+        },
+        {
+          "method": "GET",
+          "path": "/tasks",
+          "file": "src/api/routers/operations.py"
+        },
+        {
+          "method": "GET",
+          "path": "/",
+          "file": "src/api/routers/positions.py"
+        },
+        {
+          "method": "GET",
+          "path": "/{symbol}",
+          "file": "src/api/routers/positions.py"
+        },
+        {
+          "method": "GET",
+          "path": "/summary/stats",
+          "file": "src/api/routers/positions.py"
+        },
+        {
+          "method": "GET",
+          "path": "/latest",
+          "file": "src/api/routers/signals.py"
+        },
+        {
+          "method": "GET",
+          "path": "/date/{date}",
+          "file": "src/api/routers/signals.py"
+        },
+        {
+          "method": "GET",
+          "path": "/history/{symbol}",
+          "file": "src/api/routers/signals.py"
+        },
+        {
+          "method": "GET",
+          "path": "/",
+          "file": "src/api/routers/trades.py"
+        },
+        {
+          "method": "GET",
+          "path": "/recent",
+          "file": "src/api/routers/trades.py"
+        },
+        {
+          "method": "GET",
+          "path": "/performance/by-symbol",
+          "file": "src/api/routers/trades.py"
+        }
+      ],
+      "directory_prefix": "src",
+      "complexity_score": 111
+    },
+    {
+      "name": "react@frontend/src/components/layout",
+      "files": [
+        "frontend/src/components/NavLink.tsx",
+        "frontend/src/components/correlations/CorrelationMatrix.tsx",
+        "frontend/src/components/correlations/HedgeSuggestions.tsx",
+        "frontend/src/components/layout/MainLayout.tsx",
+        "frontend/src/components/layout/Navbar.tsx",
+        "frontend/src/components/layout/Sidebar.tsx",
+        "frontend/src/components/layout/StatusBar.tsx",
+        "frontend/src/components/operations/OperationCard.tsx",
+        "frontend/src/components/operations/TaskConsole.tsx",
+        "frontend/src/components/ui/accordion.tsx",
+        "frontend/src/components/ui/alert-dialog.tsx",
+        "frontend/src/components/ui/alert.tsx",
+        "frontend/src/components/ui/avatar.tsx",
+        "frontend/src/components/ui/badge.tsx",
+        "frontend/src/components/ui/breadcrumb.tsx",
+        "frontend/src/components/ui/button.tsx",
+        "frontend/src/components/ui/calendar.tsx",
+        "frontend/src/components/ui/card.tsx",
+        "frontend/src/components/ui/carousel.tsx",
+        "frontend/src/components/ui/chart.tsx",
+        "frontend/src/components/ui/checkbox.tsx",
+        "frontend/src/components/ui/command.tsx",
+        "frontend/src/components/ui/context-menu.tsx",
+        "frontend/src/components/ui/dialog.tsx",
+        "frontend/src/components/ui/drawer.tsx",
+        "frontend/src/components/ui/dropdown-menu.tsx",
+        "frontend/src/components/ui/form.tsx",
+        "frontend/src/components/ui/hover-card.tsx",
+        "frontend/src/components/ui/input-otp.tsx",
+        "frontend/src/components/ui/input.tsx",
+        "frontend/src/components/ui/label.tsx",
+        "frontend/src/components/ui/menubar.tsx",
+        "frontend/src/components/ui/navigation-menu.tsx",
+        "frontend/src/components/ui/pagination.tsx",
+        "frontend/src/components/ui/popover.tsx",
+        "frontend/src/components/ui/progress.tsx",
+        "frontend/src/components/ui/radio-group.tsx",
+        "frontend/src/components/ui/resizable.tsx",
+        "frontend/src/components/ui/scroll-area.tsx",
+        "frontend/src/components/ui/select.tsx",
+        "frontend/src/components/ui/separator.tsx",
+        "frontend/src/components/ui/sheet.tsx",
+        "frontend/src/components/ui/sidebar.tsx",
+        "frontend/src/components/ui/skeleton.tsx",
+        "frontend/src/components/ui/slider.tsx",
+        "frontend/src/components/ui/sonner.tsx",
+        "frontend/src/components/ui/switch.tsx",
+        "frontend/src/components/ui/table.tsx",
+        "frontend/src/components/ui/tabs.tsx",
+        "frontend/src/components/ui/textarea.tsx",
+        "frontend/src/components/ui/toast.tsx",
+        "frontend/src/components/ui/toaster.tsx",
+        "frontend/src/components/ui/toggle-group.tsx",
+        "frontend/src/components/ui/toggle.tsx",
+        "frontend/src/components/ui/tooltip.tsx",
+        "frontend/src/components/ui/use-toast.ts",
+        "frontend/src/lib/api.ts",
+        "frontend/src/lib/utils.ts",
+        "frontend/src/stores/appStore.ts",
+        "frontend/src/types/api.ts"
+      ],
+      "file_count": 60,
+      "loc": 5482,
+      "symbol_count": 52,
+      "integrations": [
+        "react",
+        "websocket"
+      ],
+      "endpoints": [],
+      "directory_prefix": "frontend/src",
+      "complexity_score": 76
+    },
+    {
+      "name": "src/api/models",
+      "files": [
+        "src/api/models/correlations.py",
+        "src/api/models/correlations.py",
+        "src/api/models/monitoring.py",
+        "src/api/models/monitoring.py",
+        "src/api/models/positions.py",
+        "src/api/models/positions.py",
+        "src/api/models/signals.py",
+        "src/api/models/signals.py",
+        "src/api/models/trades.py",
+        "src/api/models/trades.py"
+      ],
+      "file_count": 10,
+      "loc": 674,
+      "symbol_count": 26,
+      "integrations": [],
+      "endpoints": [],
+      "directory_prefix": "src/api/models",
+      "complexity_score": 15
+    },
+    {
+      "name": "react@frontend/src/pages",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/Correlations.tsx",
+        "frontend/src/pages/Dashboard.tsx",
+        "frontend/src/pages/History.tsx",
+        "frontend/src/pages/NotFound.tsx",
+        "frontend/src/pages/Operations.tsx",
+        "frontend/src/pages/Signals.tsx"
+      ],
+      "file_count": 7,
+      "loc": 949,
+      "symbol_count": 12,
+      "integrations": [
+        "react"
+      ],
+      "endpoints": [],
+      "directory_prefix": "frontend/src",
+      "complexity_score": 12
+    },
+    {
+      "name": "react@frontend/src/components/dashboard",
+      "files": [
+        "frontend/src/components/dashboard/KPICard.tsx",
+        "frontend/src/components/dashboard/LiveAlerts.tsx",
+        "frontend/src/components/dashboard/PositionsTable.tsx"
+      ],
+      "file_count": 3,
+      "loc": 374,
+      "symbol_count": 11,
+      "integrations": [
+        "websocket",
+        "react"
+      ],
+      "endpoints": [],
+      "directory_prefix": "frontend/src/components/dashboard",
+      "complexity_score": 11
+    },
+    {
+      "name": "react@frontend/src/hooks",
+      "files": [
+        "frontend/src/hooks/use-mobile.tsx",
+        "frontend/src/hooks/use-toast.ts",
+        "frontend/src/hooks/useMarketMonitor.ts"
+      ],
+      "file_count": 3,
+      "loc": 369,
+      "symbol_count": 11,
+      "integrations": [
+        "react",
+        "websocket"
+      ],
+      "endpoints": [],
+      "directory_prefix": "frontend/src/hooks",
+      "complexity_score": 11
+    },
+    {
+      "name": "frontend",
+      "files": [
+        "frontend/eslint.config.js",
+        "frontend/eslint.config.js",
+        "frontend/postcss.config.js",
+        "frontend/postcss.config.js",
+        "frontend/tailwind.config.ts",
+        "frontend/tailwind.config.ts",
+        "frontend/vite.config.ts",
+        "frontend/vite.config.ts"
+      ],
+      "file_count": 8,
+      "loc": 380,
+      "symbol_count": 0,
+      "integrations": [],
+      "endpoints": [],
+      "directory_prefix": "frontend",
+      "complexity_score": 8
+    },
+    {
+      "name": "react@frontend/src",
+      "files": [
+        "frontend/src/main.tsx",
+        "frontend/src/main.tsx",
+        "frontend/src/vite-env.d.ts",
+        "frontend/src/vite-env.d.ts"
+      ],
+      "file_count": 4,
+      "loc": 16,
+      "symbol_count": 0,
+      "integrations": [
+        "react"
+      ],
+      "endpoints": [],
+      "directory_prefix": "frontend/src",
+      "complexity_score": 7
+    },
+    {
+      "name": "frontend/src/components/ui",
+      "files": [
+        "frontend/src/components/ui/aspect-ratio.tsx",
+        "frontend/src/components/ui/aspect-ratio.tsx",
+        "frontend/src/components/ui/collapsible.tsx",
+        "frontend/src/components/ui/collapsible.tsx"
+      ],
+      "file_count": 4,
+      "loc": 32,
+      "symbol_count": 0,
+      "integrations": [],
+      "endpoints": [],
+      "directory_prefix": "frontend/src/components/ui",
+      "complexity_score": 4
+    },
+    {
+      "name": "main.py",
+      "files": [
+        "main.py",
+        "main.py"
+      ],
+      "file_count": 2,
+      "loc": 36,
+      "symbol_count": 0,
+      "integrations": [],
+      "endpoints": [],
+      "directory_prefix": "main.py",
+      "complexity_score": 2
+    }
+  ]
+}

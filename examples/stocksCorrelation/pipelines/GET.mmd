@@ -1,0 +1,11 @@
+flowchart LR
+  src_api_routers_positions_py_get_positions["get_positions<br/><small>src/api/routers/positions.py:15</small>"]
+  src_api_services_positions_service_py_PositionsSer["_calculate_days_held<br/><small>src/api/services/positions_service.py:131</small>"]
+  src_api_services_positions_service_py_PositionsSer["_empty_response<br/><small>src/api/services/positions_service.py:142</small>"]
+  src_api_services_positions_service_py_PositionsSer["get_all_positions<br/><small>src/api/services/positions_service.py:23</small>"]
+  src_api_routers_positions_py_get_positions:::entry
+  src_api_routers_positions_py_get_positions --> src_api_services_positions_service_py_PositionsSer
+  src_api_services_positions_service_py_PositionsSer --> src_api_services_positions_service_py_PositionsSer
+  src_api_services_positions_service_py_PositionsSer --> src_api_services_positions_service_py_PositionsSer
+classDef entry fill:#fef3c7,stroke:#d97706,stroke-width:2px
+classDef external fill:#fee2e2,stroke:#991b1b,stroke-dasharray:3 3
