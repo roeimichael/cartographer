@@ -14,7 +14,7 @@ Inside Claude Code:
 
 ```
 /plugin marketplace add roeimichael/cartographer
-/plugin install cartographer@cartographer
+/plugin install cartographer@roei-tools
 ```
 
 Once Anthropic approves the marketplace submission, the install simplifies to `/plugin install cartographer`.
