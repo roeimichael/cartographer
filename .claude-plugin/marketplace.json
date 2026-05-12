@@ -1,0 +1,15 @@
+{
+  "name": "roei-tools",
+  "description": "Personal plugin marketplace",
+  "owner": {
+    "name": "Roei Michael",
+    "email": "roeym111@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "cartographer",
+      "source": "./",
+      "description": "Map, audit, and refactor large codebases. Builds a dependency + call graph, segments by integration, dispatches 17 specialist reviewers in waves, synthesizes a P0–P3 backlog, optionally applies surgical fixes."
+    }
+  ]
+}
